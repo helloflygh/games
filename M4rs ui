@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M4rs Project</title>
+    <style>
+        /* General Setup */
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0b0b0b;
+            color: white;
+            text-align: center;
+        }
+
+        /* Top Image - Full Width */
+        .top-image {
+            width: 100%;
+            display: block;
+            margin: 0;
+        }
+
+        /* Text Content */
+        .content-container {
+            padding: 40px 20px;
+        }
+
+        .main-title {
+            font-size: 3.5rem;
+            margin: 0;
+            text-transform: lowercase;
+            letter-spacing: 2px;
+        }
+
+        .sub-text {
+            font-size: 1.2rem;
+            color: #a0a0a0;
+            margin-top: 10px;
+            font-weight: 300;
+        }
+
+        /* Sidebar Menu Icon */
+        .hamburger {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            font-size: 30px;
+            cursor: pointer;
+            z-index: 100;
+            color: white;
+            background: rgba(0,0,0,0.6);
+            padding: 5px 12px;
+            border-radius: 4px;
+        }
+
+        /* Side Panel */
+        .side-panel {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 200;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.3s;
+            padding-top: 60px;
+            border-right: 1px solid #333;
+        }
+
+        .side-panel a {
+            padding: 15px 25px;
+            text-decoration: none;
+            font-size: 22px;
+            color: #888;
+            display: block;
+            transition: 0.2s;
+            text-align: left;
+        }
+
+        .side-panel a:hover {
+            color: #ff4d4d;
+            background-color: #1a1a1a;
+        }
+
+        /* Close Button */
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 30px;
+            cursor: pointer;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="navPanel" class="side-panel">
+        <span class="close-btn" onclick="toggleNav(0)">&times;</span>
+        <a href="https://example.com">home</a>
+        <a href="https://example.com">games</a>
+        <a href="https://example.com">movies</a>
+        <a href="https://example.com">music</a>
+        <a href="https://example.com">proxy</a>
+        <a href="https://example.com">settings</a>
+    </div>
+
+    <div class="hamburger" onclick="toggleNav(250)">&#9776;</div>
+
+    <img src="https://raw.githubusercontent.com/helloflygh/games/main/Game.png" class="top-image" alt="M4rs Top Image">
+
+    <div class="content-container">
+        <div class="main-title">info</div>
+        <div class="sub-text">ever since t!tan went down I have set out to make M4rs.</div>
+    </div>
+
+    <script>
+        function toggleNav(width) {
+            document.getElementById("navPanel").style.width = width + "px";
+        }
+    </script>
+
+</body>
+</html>
