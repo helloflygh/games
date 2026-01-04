@@ -5,40 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>M4rs Project</title>
     <style>
-        /* General Setup */
+        /* Background GIF Setup */
         body {
             font-family: 'Segoe UI', Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #0b0b0b;
+            background-image: url('https://raw.githubusercontent.com/helloflygh/games/main/IMG_4494.gif');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             color: white;
             text-align: center;
+            min-height: 100vh;
         }
 
-        /* Top Image - Full Width */
+        /* Centered Image - Smaller Size */
         .top-image {
-            width: 100%;
-            display: block;
-            margin: 0;
+            width: 200px; /* Adjusted to be smaller */
+            margin-top: 50px;
+            display: inline-block;
         }
 
-        /* Text Content */
+        /* Text Content with glass effect for readability */
         .content-container {
-            padding: 40px 20px;
+            padding: 20px;
+            margin-top: 20px;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(5px);
+            display: inline-block;
+            border-radius: 15px;
         }
 
         .main-title {
-            font-size: 3.5rem;
+            font-size: 3rem;
             margin: 0;
             text-transform: lowercase;
-            letter-spacing: 2px;
+            font-weight: bold;
         }
 
         .sub-text {
-            font-size: 1.2rem;
-            color: #a0a0a0;
-            margin-top: 10px;
-            font-weight: 300;
+            font-size: 1.1rem;
+            color: #e0e0e0;
+            margin-top: 5px;
         }
 
         /* Sidebar Menu Icon */
@@ -50,9 +58,9 @@
             cursor: pointer;
             z-index: 100;
             color: white;
-            background: rgba(0,0,0,0.6);
+            background: rgba(0,0,0,0.7);
             padding: 5px 12px;
-            border-radius: 4px;
+            border-radius: 8px;
         }
 
         /* Side Panel */
@@ -63,36 +71,34 @@
             z-index: 200;
             top: 0;
             left: 0;
-            background-color: #111;
+            background-color: rgba(15, 15, 15, 0.95);
             overflow-x: hidden;
             transition: 0.3s;
             padding-top: 60px;
-            border-right: 1px solid #333;
         }
 
         .side-panel a {
-            padding: 15px 25px;
+            padding: 15px 30px;
             text-decoration: none;
-            font-size: 22px;
-            color: #888;
+            font-size: 20px;
+            color: #bbb;
             display: block;
             transition: 0.2s;
             text-align: left;
+            border-bottom: 1px solid #333;
         }
 
         .side-panel a:hover {
-            color: #ff4d4d;
-            background-color: #1a1a1a;
+            color: #ffffff;
+            background-color: #444;
         }
 
-        /* Close Button */
         .close-btn {
             position: absolute;
             top: 10px;
             right: 20px;
             font-size: 30px;
             cursor: pointer;
-            color: #fff;
         }
     </style>
 </head>
@@ -110,7 +116,9 @@
 
     <div class="hamburger" onclick="toggleNav(250)">&#9776;</div>
 
-    <img src="https://raw.githubusercontent.com/helloflygh/games/main/Game.png" class="top-image" alt="M4rs Top Image">
+    <img src="https://raw.githubusercontent.com/helloflygh/games/main/IMG_4493-removebg-preview.png" class="top-image" alt="M4rs Logo">
+
+    <br>
 
     <div class="content-container">
         <div class="main-title">info</div>
