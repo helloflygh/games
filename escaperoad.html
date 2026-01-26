@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escape Road - GitHub Loader</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            background-color: #000;
+        }
+        #game-container {
+            width: 100vw;
+            height: 100vh;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+    <iframe id="game-container" title="Game Loader"></iframe>
+
+    <script>
+        const targetURL = "https://raw.githubusercontent.com/CoolDude2349/Offline-HTML-Games-Pack/master/offline/escaperoad.html";
+
+        async function loadGame() {
+            try {
+                const response = await fetch(targetURL);
+                if (!response.ok) throw new Error('Failed to fetch game file.');
+                
+                const html = await response.text();
+                
+                const iframe = document.getElementById('game-container');
+                const doc = iframe.contentWindow.document;
+                
+                // Write the fetched HTML directly into the iframe
+                doc.open();
+                doc.write(html);
+                doc.close();
+            } catch (err) {
+                console.error(err);
+                document.body.innerHTML = `<div style="color:white; text-align:center; padding-top:20%;">
+                    <h2>Error loading game</h2>
+                    <p>${err.message}</p>
+                </div>`;
+            }
+        }
+
+        // Run on load
+        window.onload = loadGame;
+    </script>
+</body>
+</html>
